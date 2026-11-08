@@ -24,7 +24,7 @@ Create a `.env` file:
 ANTHROPIC_API_KEY=your-api-key
 ```
 
-> If you previously installed the `jwt` package, remove it first (`pip uninstall jwt`). It conflicts with PyJWT.
+If you previously installed the `jwt` package, remove it first (`pip uninstall jwt`). It conflicts with PyJWT.
 
 ## Run
 
@@ -63,7 +63,3 @@ Checks authorized and denied access, forged capabilities, and tampered ciphertex
 | `encryption.py` | AES-256-GCM document encryption |
 | `document_store.py` | Encrypts the sample documents into the store |
 | `test_security.py` | Security checks |
-
-## Not production-ready
-
-This is a teaching project. The sign-in is a stub, the KEK lives in `.keys/kek.bin` (keep it out of Git), the signing key is regenerated on every start, and there is no replay protection or revocation. For real use, add proper authentication, a managed KMS or HSM, and track used token IDs.
